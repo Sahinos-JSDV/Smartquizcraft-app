@@ -1,0 +1,28 @@
+import { Injectable } from '@angular/core';
+import { ValidatorService } from './tools/validator.service';
+import { ErrorsService } from './tools/errors.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UsuarioService {
+
+  constructor(
+    public validatorService: ValidatorService,
+    public errorService: ErrorsService
+  ) { }
+
+  public esquemaUser(){
+    return {
+      'first_name': '',
+      'last_name': '',
+      'email': '',
+      'password': '',
+      'role': 'participante',
+      'telefono': '',
+      'ciudad': '',
+      'edad': '',
+      'terminos_condiciones': false
+    }
+  }
+}
