@@ -1,11 +1,13 @@
-<section class="home-screen">
+<section class="home">
     <div class="wrapper">
-        <mat-drawer-container>
-            <mat-drawer #drawer mode='over' position="end">
-                <app-right-sidebar (drawer)="drawer.toggle()"></app-right-sidebar>
-            </mat-drawer>
-            <app-navbar (drawer)="drawer.toggle()"></app-navbar>
-        </mat-drawer-container>
+      <!-- Esta etiqueta se usa para indicar todo el html que debe cubrir el menú -->
+      <mat-drawer-container>
+        <mat-drawer #drawer mode='over' position="start">
+          <app-right-sidebar (cerrar)="drawer.toggle()"></app-right-sidebar>
+        </mat-drawer>
+        <!-- Se coloca el header de las vistas -->
+        <app-navbar (drawer)="drawer.toggle()"></app-navbar>
+        <!-- Colocamos la sección del body de toda la vista -->
         <div class="home-body">
             <img src="/assets/images/light-blue-blurred-background-vector.jpg" alt="Background" class="background-image">
             <h2>Bienvenido Usuario</h2>
@@ -15,5 +17,6 @@
             <button class="start-button">Vamos!</button>
             </div>
         </div>
+      </mat-drawer-container>
     </div>
-</section>
+  </section>

@@ -20,6 +20,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { RightSidebarComponent } from './partials/right-sidebar/right-sidebar.component';
 import {MatListModule} from '@angular/material/list';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +41,9 @@ import {MatListModule} from '@angular/material/list';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule

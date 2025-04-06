@@ -28,11 +28,8 @@ export class RightSidebarComponent implements OnInit {
     this.router.navigate(["home"]);
   }
 
-  public goBasesPromocion(){
-  }
-
-  public goTiendasParticipantes(){
-
+  public goCrearQuizz(){
+    this.router.navigate(["crear-quiz"]);
   }
 
   public logout(){
