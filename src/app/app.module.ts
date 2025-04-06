@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,9 @@ import { ContestarquizScreenComponent } from './screens/contestarquiz-screen/con
 import { ResultadosScreenComponent } from './screens/resultados-screen/resultados-screen.component';
 import { NavbarComponent } from './partials/navbar/navbar.component';
 import { FooterComponent } from './partials/footer/footer.component';
+
+//Este import es para los servicios HTTP
+import { HttpClientModule } from '@angular/common/http';
 
 // materiales
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -40,7 +44,9 @@ import {MatListModule} from '@angular/material/list';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
