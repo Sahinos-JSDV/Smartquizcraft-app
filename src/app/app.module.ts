@@ -13,22 +13,31 @@ import { ResultadosScreenComponent } from './screens/resultados-screen/resultado
 import { NavbarComponent } from './partials/navbar/navbar.component';
 import { FooterComponent } from './partials/footer/footer.component';
 
+// materiales
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { RightSidebarComponent } from './partials/right-sidebar/right-sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginScreenComponent,
-    RegistroScreenComponent,
     HomeScreenComponent,
+    RegistroScreenComponent,
     CrearquizScreenComponent,
     ContestarquizScreenComponent,
     ResultadosScreenComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    RightSidebarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

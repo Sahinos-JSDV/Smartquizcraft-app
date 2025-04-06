@@ -1,1 +1,10 @@
-<p>home-screen works!</p>
+<section class="bases-promocion">
+    <div class="wrapper">
+        <mat-drawer-container>
+        <mat-drawer #drawer mode='over' position="end">
+            <app-right-sidebar (drawer)="drawer.toggle()"></app-right-sidebar>
+        </mat-drawer>
+            <app-navbar (drawer)="drawer.toggle()"></app-navbar>
+    </mat-drawer-container>
+    </div>
+</section>
