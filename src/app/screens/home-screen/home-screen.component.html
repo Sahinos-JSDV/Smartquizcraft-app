@@ -1,10 +1,19 @@
-<section class="bases-promocion">
+<section class="home-screen">
     <div class="wrapper">
         <mat-drawer-container>
-        <mat-drawer #drawer mode='over' position="end">
-            <app-right-sidebar (drawer)="drawer.toggle()"></app-right-sidebar>
-        </mat-drawer>
+            <mat-drawer #drawer mode='over' position="end">
+                <app-right-sidebar (drawer)="drawer.toggle()"></app-right-sidebar>
+            </mat-drawer>
             <app-navbar (drawer)="drawer.toggle()"></app-navbar>
-    </mat-drawer-container>
+        </mat-drawer-container>
+        <div class="home-body">
+            <img src="/assets/images/light-blue-blurred-background-vector.jpg" alt="Background" class="background-image">
+            <h2>Bienvenido Usuario</h2>
+            <div class="content-wrapper">
+            <img class="imagenIA" src="/assets/images/IA.jpg" >
+            <h1>Estas preparado para un nuevo quizz?</h1>
+            <button class="start-button">Vamos!</button>
+            </div>
+        </div>
     </div>
 </section>

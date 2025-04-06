@@ -18,6 +18,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { RightSidebarComponent } from './partials/right-sidebar/right-sidebar.component';
+import {MatListModule} from '@angular/material/list';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +40,7 @@ import { RightSidebarComponent } from './partials/right-sidebar/right-sidebar.co
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

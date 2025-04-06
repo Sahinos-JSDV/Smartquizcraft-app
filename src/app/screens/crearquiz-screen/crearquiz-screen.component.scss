@@ -1,0 +1,30 @@
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: #c5d8ec;
+  }
+
+  .home-body {
+    display: flex; /* Activa Flexbox para centrar el contenido */
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+    padding: 16px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+  }
+
+  .lista-contenido-Quizz {
+    background-color: white; /* Fondo blanco */
+    padding: 16px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar el fondo */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 400px; /* Ancho máximo */
+  }
+  
+  mat-list-item {
+    font-size: 16px; /* Ajusta el tamaño del texto */
+    padding: 8px 0; /* Espaciado interno entre los elementos */
+  }
+  

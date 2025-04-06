@@ -3,7 +3,23 @@
     max-width: 100%; /* Mantiene las proporciones de la imagen */
     padding-right: 10px ;
 }
+.header-app{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #165df5;
+  }
 
-.icon-list {
-    margin-left: auto; /* Empuja el icono hacia la derecha */
-}
+.icon-list{
+    width: 5%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto   ;
+    align-items: center;
+  }

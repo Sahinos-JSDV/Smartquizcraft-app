@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class RightSidebarComponent implements OnInit {
   @Output() cerrar = new EventEmitter();
   public isLogin: boolean = true;
+  
   constructor( private router: Router) { }
 
   ngOnInit(): void {
@@ -37,5 +38,4 @@ export class RightSidebarComponent implements OnInit {
   public logout(){
     this.router.navigate(["/"]);
   }
-
 }
