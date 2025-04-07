@@ -1,6 +1,6 @@
 .wrapper{
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #FFFFFF;
 }
 
@@ -13,7 +13,6 @@ mat-drawer-container {
 .home-body {
   padding: 16px;
   box-sizing: border-box;
-  background-image: url('/src/assets/images/light-blue-blurred-background-vector.jpg'); /* Ruta de la imagen */
   background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -59,5 +58,5 @@ mat-drawer-container {
 }
 
 .start-button:hover {
-  background-color: #2feb39; /* Color de fondo al pasar el cursor */
+  background-color: #6b2feb; /* Color de fondo al pasar el cursor */
 }

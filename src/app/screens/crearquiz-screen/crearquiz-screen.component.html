@@ -1,28 +1,8 @@
-<!-- <section class="home-screen">
-    <div class="wrapper">
-        <mat-drawer-container>
-            <mat-drawer #drawer mode='over' position="end">
-                <app-right-sidebar (drawer)="drawer.toggle()"></app-right-sidebar>
-            </mat-drawer>
-            <app-navbar (drawer)="drawer.toggle()"></app-navbar>
-        </mat-drawer-container>
-        <div class="home-body">
-            <h2>Usuario, esto es lo mas reciente de ti</h2>
-            <mat-list class="lista-contenido-Quizz">
-                <mat-list-item>Quizz 1</mat-list-item>
-                <mat-list-item>Quizz 2</mat-list-item>
-                <mat-list-item>Quizz 3</mat-list-item>
-               </mat-list>
-        </div>
-
-    </div>
-</section> -->
-
 <section class="home">
     <div class="wrapper">
       <!-- Esta etiqueta se usa para indicar todo el html que debe cubrir el menú -->
       <mat-drawer-container>
-        <mat-drawer #drawer mode='over' position="start">
+        <mat-drawer #drawer mode='over' position="end">
           <app-right-sidebar (cerrar)="drawer.toggle()"></app-right-sidebar>
         </mat-drawer>
         <!-- Se coloca el header de las vistas -->

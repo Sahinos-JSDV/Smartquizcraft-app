@@ -2,7 +2,7 @@
     <div class="wrapper">
       <!-- Esta etiqueta se usa para indicar todo el html que debe cubrir el menú -->
       <mat-drawer-container>
-        <mat-drawer #drawer mode='over' position="start">
+        <mat-drawer #drawer mode='over' position="end">
           <app-right-sidebar (cerrar)="drawer.toggle()"></app-right-sidebar>
         </mat-drawer>
         <!-- Se coloca el header de las vistas -->
