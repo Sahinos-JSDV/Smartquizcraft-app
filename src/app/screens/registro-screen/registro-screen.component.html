@@ -1,1 +1,84 @@
-<p>registro-screen works!</p>
+<div class="wrapper">
+    <!-- Sección izquierda con imagen de fondo y los íconos -->
+    <div class="section-left">
+      <img src="/assets/image/freepik__background__86821.png" class="logo-sqc">
+      <p class="txt-sqc">SmartQuizCraft</p>
+      <!-- <img src="/assets/image/FCCBuap.png" class="logo-fcc"> -->
+    </div>
+    <!-- Sección derecha para el registro -->
+    <div class="section-right">
+      <mat-drawer-container>
+        <mat-drawer #drawer mode='over' position="end">
+          <app-right-sidebar (cerrar)="drawer.toggle()"></app-right-sidebar>
+        </mat-drawer>
+        <div class="header-registro"> <!--Header para el registro-->
+          <app-navbar (drawer)="drawer.toggle()"></app-navbar>
+        </div>
+        <!-- Body del registro de materias -->
+        <div class="body-registro">
+          <div class="row mt-3 mb-3">
+            <div class="form-group col-12">
+              <label class="title-user" for="tipo_usuario">Ingresa tus datos</label>
+            </div>
+          </div>
+          <!-- Inicio de los campos del formulario -->
+          <div class="seccion-1">
+            <mat-form-field class="mat-input nombre-materia" appearance="outline">
+              <mat-label>Nombre</mat-label>
+              <input matInput [(ngModel)]="usuario.nombre" name="id" placeholder="Ingresa tu nombre" (keypress)="soloLetras($event)">
+            </mat-form-field>
+              <div *ngIf="errors.nombre" style="grid-row: 2/3;" class="invalid-feedback">{{ errors.nombre }}</div>
+
+            <mat-form-field class="mat-input nrc-materia" appearance="outline">
+              <mat-label>Apellidos</mat-label>
+              <input matInput [(ngModel)]="usuario.nrc" name="id" placeholder="Ingresa tus apellidos" (keypress)="soloLetras($event)">
+            </mat-form-field>
+            <div *ngIf="errors.apellidos" style="grid-row: 2/3; grid-column: 5/7" class="invalid-feedback">{{ errors.apellidos }}</div>
+
+            <mat-form-field class="mat-input" appearance="outline">
+              <mat-label>Correo electrónico</mat-label>
+              <input matInput [(ngModel)]="usuario.email" placeholder="Ingresa tu correo electrónico">
+            </mat-form-field>
+            <div *ngIf="errors.email" class="invalid-feedback">{{ errors.email }}</div>
+
+            <mat-form-field class="mat-input" appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input matInput [(ngModel)]="usuario.password" type="{{ inputType_1 }}" placeholder="Escribe una contraseña">
+              <mat-icon matSuffix class="eye-icon" (click)="showPassword()">{{hide_1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+            <div *ngIf="errors.password" class="invalid-feedback">{{ errors.password }}</div>
+
+            <mat-form-field class="mat-input" appearance="outline">
+              <mat-label>Confirmar contraseña</mat-label>
+              <input matInput [(ngModel)]="usuario.confirmar_password" type="{{ inputType_2 }}" placeholder="Confirma la contraseña">
+              <mat-icon matSuffix class="eye-icon" (click)="showPwdConfirmar()">{{hide_2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+            <div *ngIf="errors.confirmar_password" class="invalid-feedback">{{ errors.confirmar_password }}</div>
+
+            <mat-form-field class="mat-input" appearance="outline">
+            <mat-label>Teléfono</mat-label>
+              <input matInput [(ngModel)]="usuario.telefono" mask='(000) 000-0000' placeholder="Ingresa tu teléfono">
+            </mat-form-field>
+            <div *ngIf="errors.telefono" class="invalid-feedback">{{ errors.telefono }}</div>
+
+            <mat-form-field class="mat-input" appearance="outline">
+              <mat-label>Ciudad</mat-label>
+              <input matInput [(ngModel)]="usuario.ciudad"  placeholder="Ingresa tu ciudad">
+            </mat-form-field>
+            <div *ngIf="errors.ciudad" class="invalid-feedback">{{ errors.ciudad }}</div>
+
+            <mat-form-field class="mat-input" appearance="outline">
+              <mat-label>Edad</mat-label>
+              <input matInput [(ngModel)]="usuario.edad" mask = '00' placeholder="Ingrese su edad">
+            </mat-form-field>
+            <div *ngIf="errors.edad" class="invalid-feedback">{{ errors.edad }}</div>
+          </div>
+
+
+
+        </div>
+      </mat-drawer-container>
+    </div>
+</div>
+
+

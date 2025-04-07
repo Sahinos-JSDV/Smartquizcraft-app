@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div class="icon-close">
+      <button class="btn" (click)="cerrar_modal()">
+          <i class="bi bi-x-lg"></i>
+      </button>
+  </div>
+  <div class="body-modal">
+      <h1 class="title-modal">Crea tu quiz</h1>
+      <span class="descripcion">Estás a punto de iniciar un quiz, pero primero define a qué reto te quieres enfrentar.</span>
+
+      <span class="descripcion mt-1">Selecciona qué tema quieres abarcar</span>
+      <mat-form-field class="mat-input mb-3" appearance="outline">
+        <mat-label>Tema de interés</mat-label>
+        <input matInput [(ngModel)]="temaInteres" placeholder="Ej. Biotecnología" (keypress)="soloLetras($event)">
+      </mat-form-field>
+
+      <span class="descripcion mt-1">Selecciona una dificultad</span>
+      <mat-form-field class="mat-input mb-3" appearance="outline">
+        <mat-label>Dificultad</mat-label>
+        <mat-select [(ngModel)]="dificultadSeleccionada">
+          <mat-option *ngFor="let dificultad of dificultades" [value]="dificultad.nombre">
+            {{dificultad.nombre}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+      <div class="buttons-modal">
+          <button mat-button class="btn-regresar" (click)="cerrar_modal()">
+              Cancelar
+          </button>
+          <button mat-button class="btn-crear" (click)="crearQuiz()">
+              Crear
+          </button>
+      </div>
+  </div>
+</div>

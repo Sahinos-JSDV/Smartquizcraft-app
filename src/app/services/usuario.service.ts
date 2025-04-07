@@ -18,11 +18,10 @@ export class UsuarioService {
       'last_name': '',
       'email': '',
       'password': '',
-      'role': 'participante',
+      'confirmar_password': '',
       'telefono': '',
       'ciudad': '',
       'edad': '',
-      'terminos_condiciones': false
     }
   }
 }

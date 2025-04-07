@@ -13,8 +13,17 @@ import { ResultadosScreenComponent } from './screens/resultados-screen/resultado
 import { NavbarComponent } from './partials/navbar/navbar.component';
 import { FooterComponent } from './partials/footer/footer.component';
 
+//para las máscaras
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+
 //Este import es para los servicios HTTP
 import { HttpClientModule } from '@angular/common/http';
+
+//Para el modal
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog'
+import { MatInputModule } from '@angular/material/input';
+
 
 // materiales
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -22,9 +31,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { RightSidebarComponent } from './partials/right-sidebar/right-sidebar.component';
 import {MatListModule} from '@angular/material/list';
-
+import {MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CrearquizModalComponent } from './modals/crearquiz-modal/crearquiz-modal.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +48,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     FooterComponent,
     RightSidebarComponent,
+    CrearquizModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,9 +62,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSidenavModule,
     MatListModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatDialogModule,
+    MatInputModule,
+    NgxMaskDirective
   ],
-  providers: [],
+  providers: [
+    provideNgxMask()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
