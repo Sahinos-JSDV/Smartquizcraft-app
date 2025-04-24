@@ -8,15 +8,14 @@
         <!-- Se coloca el header de las vistas -->
         <app-navbar (drawer)="drawer.toggle()"></app-navbar>
         <!-- Colocamos la sección del body de toda la vista -->
-        <div class="home-body">
-            <img src="/assets/image/light-blue-blurred-background-vector.jpg" alt="Background" class="background-image">
+        <div class="home-body">         
             <h2>Bienvenido Usuario</h2>
             <div class="content-wrapper">
             <img class="imagenIA" src="/assets/image/IA.jpg" >
             <h1>Estas preparado para un nuevo quizz?</h1>
-            <button class="start-button">Vamos!</button>
+            <button class="start-button" (click)="GoQuizz()">Vamos!</button>
             </div>
         </div>
-      </mat-drawer-container>
+        </mat-drawer-container>
     </div>
   </section>

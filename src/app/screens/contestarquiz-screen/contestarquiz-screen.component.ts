@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-contestarquiz-screen',
@@ -6,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contestarquiz-screen.component.scss']
 })
 export class ContestarquizScreenComponent implements OnInit {
-  constructor() { }
+  public datosRecibidos: any;
+  constructor(private router: Router) {
+    const navigation = this.router.getCurrentNavigation();
+  if (navigation?.extras?.state) {
+    this.datosRecibidos = navigation.extras.state['datos'];
+    console.log('Datos recibidos:', this.datosRecibidos);
+  } else {
+    console.log('No se recibieron datos en la navegación.');
+  }
+   }
 
   ngOnInit(): void {
-    // Aquí puedes agregar lógica adicional si es necesario
+    
   }
+
 }

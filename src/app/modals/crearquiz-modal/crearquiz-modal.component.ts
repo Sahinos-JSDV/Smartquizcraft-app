@@ -30,7 +30,7 @@ export class CrearquizModalComponent implements OnInit{
 
   public crearQuiz(){
     alert("aquí irá la silicitud http para crear el quiz");
-    this.dialogRef.close({create:true});
+    this.dialogRef.close({create: true, tema: this.temaInteres, dificultad: this.dificultadSeleccionada});
   }
 
   public soloLetras(event: KeyboardEvent) {

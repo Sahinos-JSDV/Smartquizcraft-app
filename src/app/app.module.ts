@@ -66,7 +66,7 @@ import { CrearquizModalComponent } from './modals/crearquiz-modal/crearquiz-moda
     MatSelectModule,
     MatDialogModule,
     MatInputModule,
-    NgxMaskDirective
+    NgxMaskDirective,
   ],
   providers: [
     provideNgxMask()

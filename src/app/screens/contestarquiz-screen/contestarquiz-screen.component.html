@@ -1,1 +1,16 @@
-<p>contestarquiz-screen works!</p>
+<section class="home">
+    <div class="wrapper">
+      <!-- Esta etiqueta se usa para indicar todo el html que debe cubrir el menú -->
+      <mat-drawer-container>
+        <mat-drawer #drawer mode='over' position="end">
+          <app-right-sidebar (cerrar)="drawer.toggle()"></app-right-sidebar>
+        </mat-drawer>
+        <!-- Se coloca el header de las vistas -->
+        <app-navbar (drawer)="drawer.toggle()"></app-navbar>
+        <!-- Colocamos la sección del body de toda la vista -->
+        <div class="home-body">         
+            <h2>Bienvenido Usuario</h2>
+        </div>
+        </mat-drawer-container>
+    </div>
+  </section>

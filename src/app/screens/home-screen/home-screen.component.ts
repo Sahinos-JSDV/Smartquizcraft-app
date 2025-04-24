@@ -14,5 +14,9 @@ export class HomeScreenComponent implements OnInit {
   ngOnInit(): void {
     // Aquí puedes agregar lógica adicional si es necesario
   }
+  
+  GoQuizz(){
+    this.router.navigate(["crear-quiz"]);
+  }
  
 }
