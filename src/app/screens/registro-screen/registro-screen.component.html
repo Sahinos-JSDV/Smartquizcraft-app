@@ -74,7 +74,10 @@
             <div *ngIf="errors.edad" class="invalid-feedback">{{ errors.edad }}</div>
           </div>
 
-
+          <div class="seccion-2">
+            <button class="btn btn-danger mt-5 btn-can" type="submit" (click)="cancelar()">Cancelar</button>
+            <button class="btn btn-primary mt-5 btn-reg" type="submit" (click)="registrar()">Registrar</button>
+          </div>
 
         </div>
       </mat-drawer-container>

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CrearquizModalComponent } from 'src/app/modals/crearquiz-modal/crearquiz-modal.component';
-import { ChatserviceService } from '../../services/chatservice.service';
+import { ChatserviceService } from 'src/app/services/chatservice.service';
 
 @Component({
   selector: 'app-crearquiz-screen',
@@ -14,7 +14,7 @@ export class CrearquizScreenComponent implements OnInit {
   promptText = 'Escribe un poema sobre la inteligencia artificial';
   response: any;
 
-  
+
 
   constructor(
     public dialog: MatDialog,
@@ -41,7 +41,7 @@ export class CrearquizScreenComponent implements OnInit {
           this.response = data;
         });
         console.log('respuestas recibidas:', this.response);
-    
+
       } else {
         alert("Quiz no creado");
       }

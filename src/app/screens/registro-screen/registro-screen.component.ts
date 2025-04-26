@@ -54,6 +54,10 @@ export class RegistroScreenComponent implements OnInit {
 
   }
 
+  public cancelar(){
+    this.router.navigate(["/"]);
+  }
+
   public soloLetras(event: KeyboardEvent) {
     const charCode = event.key.charCodeAt(0);
     // Permitir solo letras (mayúsculas y minúsculas) y espacio

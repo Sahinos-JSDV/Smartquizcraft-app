@@ -14,6 +14,7 @@ export class UsuarioService {
 
   public esquemaUser(){
     return {
+      'rol': 'usuario',
       'first_name': '',
       'last_name': '',
       'email': '',
