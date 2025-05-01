@@ -1,9 +1,9 @@
+import { state } from '@angular/animations';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CrearquizModalComponent } from 'src/app/modals/crearquiz-modal/crearquiz-modal.component';
-import { ChatserviceService } from 'src/app/services/chatservice.service';
 
 @Component({
   selector: 'app-crearquiz-screen',
@@ -11,20 +11,16 @@ import { ChatserviceService } from 'src/app/services/chatservice.service';
   styleUrls: ['./crearquiz-screen.component.scss']
 })
 export class CrearquizScreenComponent implements OnInit {
-  promptText = 'Escribe un poema sobre la inteligencia artificial';
-  response: any;
 
 
 
   constructor(
     public dialog: MatDialog,
     private router: Router,
-    private http: HttpClient,
-    private Chatservice: ChatserviceService
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
-    // Aquí puedes agregar lógica adicional si es necesario
   }
 
   public crear() {
@@ -34,14 +30,23 @@ export class CrearquizScreenComponent implements OnInit {
       width: '350px',
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(async result => {
       if (result?.create && result.tema) {
         console.log('Tema recibido del modal:', result.tema);
-        this.Chatservice.generatePrompt(this.promptText).subscribe((data) => {
-          this.response = data;
-        });
-        console.log('respuestas recibidas:', this.response);
+         const url = 'https://magicloops.dev/api/loop/4362fea7-5ad5-44ce-9788-cb7a1b8f132d/run';
+         const body = { tema: result.tema };
+ 
+         try {
+           const response = await this.http.post(url, body).toPromise();
+           const jsonString = encodeURIComponent(JSON.stringify(response));
 
+           this.router.navigate(["contestar-quiz"], { queryParams: { datos: jsonString } });
+           
+         } catch (error) {
+           console.error('Error al llamar a la API:', error);
+           alert('Ocurrió un error al generar el quiz.');
+         }
+        
       } else {
         alert("Quiz no creado");
       }

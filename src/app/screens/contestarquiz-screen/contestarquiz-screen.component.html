@@ -9,7 +9,22 @@
         <app-navbar (drawer)="drawer.toggle()"></app-navbar>
         <!-- Colocamos la sección del body de toda la vista -->
         <div class="home-body">         
-            <h2>Bienvenido Usuario</h2>
+            <h2>Quizz</h2>
+            <br>
+            <form #quizForm="ngForm">
+              <div *ngFor="let pregunta of datosRecibidos; let i = index">
+                <h3>{{ pregunta.pregunta }}</h3>
+            
+                <div *ngFor="let opcion of ['respuesta1', 'respuesta2', 'respuesta3', 'respuesta4']; let j = index">
+                  <label>
+                    <input type="radio" [name]="'pregunta' + i" [value]="j + 1" [(ngModel)]="respuestas[i]">
+                    {{ pregunta[opcion] }}
+                  </label>
+                </div>
+              </div>
+            
+              <button type="button" (click)="verificarRespuestas()">Enviar</button>
+            </form>
         </div>
         </mat-drawer-container>
     </div>

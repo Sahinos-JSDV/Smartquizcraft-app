@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute  } from '@angular/router';
 
 
 @Component({
@@ -9,18 +9,36 @@ import { Router } from '@angular/router';
 })
 export class ContestarquizScreenComponent implements OnInit {
   public datosRecibidos: any;
-  constructor(private router: Router) {
-    const navigation = this.router.getCurrentNavigation();
-  if (navigation?.extras?.state) {
-    this.datosRecibidos = navigation.extras.state['datos'];
-    console.log('Datos recibidos:', this.datosRecibidos);
-  } else {
-    console.log('No se recibieron datos en la navegación.');
+
+  respuestas: number[] = [];
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+    
+
   }
-   }
 
   ngOnInit(): void {
-    
+    this.route.queryParams.subscribe(params => {
+      if (params['datos']) {
+        const datos = JSON.parse(decodeURIComponent(params['datos']));
+        console.log(datos);
+        this.datosRecibidos = datos.preguntas; // Extrae el array dentro del objeto
+        console.log(this.datosRecibidos);
+      } else {
+        console.error('No se encontraron datos en los query params');
+      }
+    });
+  }
+
+  verificarRespuestas() {
+    let correctas = 0;
+    this.datosRecibidos.forEach((pregunta, index) => {
+      if (this.respuestas[index] === pregunta.numeroCorrecto) {
+        correctas++;
+      }
+    });
+
+    alert(`Has acertado ${correctas} de ${this.datosRecibidos.length} preguntas.`);
   }
 
 }
