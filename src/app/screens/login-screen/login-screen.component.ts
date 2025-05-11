@@ -24,7 +24,7 @@ export class LoginScreenComponent implements OnInit {
   }
 
   public login(){
-    alert(this.password + " " + this.username);
+    //alert(this.password + " " + this.username);
     this.errors = [];
 
     this.errors = this.facadeService.validarLogin(this.username, this.password);
@@ -32,6 +32,17 @@ export class LoginScreenComponent implements OnInit {
       return false;
     }
 
+    this.facadeService.login(this.username, this.password).subscribe(
+      (response) => {
+        console.log(response);
+
+        this.facadeService.saveUserData(response);
+        this.router.navigate(["home"]);
+      },
+      (error) => {
+        alert("No fue posible inciar sesión");
+      }
+    );
   }
 
   public showPassword(){

@@ -2,6 +2,8 @@ import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { FacadeService } from 'src/app/services/facade.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
+declare var $:any;
+
 
 @Component({
   selector: 'app-registro-screen',
@@ -16,6 +18,7 @@ export class RegistroScreenComponent implements OnInit {
   public hide_2: boolean = false;
   public inputType_1: string = 'password';
   public inputType_2: string = 'password';
+  public token: String = "";
 
   constructor(
     private usuarioService: UsuarioService,
@@ -26,6 +29,7 @@ export class RegistroScreenComponent implements OnInit {
   ngOnInit(): void {
     // Aquí puedes agregar lógica adicional si es necesario
     this.usuario = this.usuarioService.esquemaUser();
+    this.token = this.facadeService.getSessionToken();
   }
 
   public showPassword(){
@@ -51,6 +55,34 @@ export class RegistroScreenComponent implements OnInit {
   }
 
   public registrar(){
+    //Validar
+    this.errors = [];
+
+    this.errors = this.usuarioService.validarUsuario(this.usuario);
+    if(!$.isEmptyObject(this.errors)){
+      alert("Los campos no están bien rellenados, por favor, verifica tus datos.")
+      return false;
+    }
+
+    if(this.usuario.password == this.usuario.confirmar_password){
+      this.usuarioService.registrarUsuario(this.usuario).subscribe(
+        (response)=>{
+          alert("Usuario registrado con éxito");
+          if(this.token != ""){
+            this.router.navigate(["home"]);
+          }else{
+            this.router.navigate(["/"]);
+          }
+        },
+        (error)=>{
+
+        }
+      );
+    }else{
+      alert("Tus contraseñas no coinciden, por favor vuelve a insertarlas.");
+      this.usuario.password = "";
+      this.usuario.confirmar_password = "";
+    }
 
   }
 

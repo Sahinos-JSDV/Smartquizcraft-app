@@ -10,12 +10,12 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-const session_cookie_name = 'sistema-buap-token';
-const user_email_cookie_name = 'sistema-buap-email';
-const user_id_cookie_name = 'sistema-buap-user_id';
-const user_complete_name_cookie_name = 'sistema-buap-user_complete_name';
-const group_name_cookie_name = 'sistema-buap-group_name';
-const codigo_cookie_name = 'sistema-buap-codigo';
+const session_cookie_name = 'Smartquizcraft-token';
+const user_email_cookie_name = 'Smartquizcraft-email';
+const user_id_cookie_name = 'Smartquizcraft-user_id';
+const user_complete_name_cookie_name = 'Smartquizcraft-user_complete_name';
+const group_name_cookie_name = 'Smartquizcraft-group_name';
+const codigo_cookie_name = 'Smartquizcraft-codigo';
 
 @Injectable({
   providedIn: 'root'
@@ -97,7 +97,7 @@ export class FacadeService {
 
   saveUserData(user_data:any){
     var secure = environment.url_api.indexOf("https")!=-1;
-    if(user_data.rol == "administrador"){
+    if(user_data.rol == "usuario1"){
       this.cookieService.set(user_id_cookie_name, user_data.id, undefined, undefined, undefined, secure, secure?"None":"Lax");
       this.cookieService.set(user_email_cookie_name, user_data.email, undefined, undefined, undefined, secure, secure?"None":"Lax");
       this.cookieService.set(user_complete_name_cookie_name, user_data.first_name + " " + user_data.last_name, undefined, undefined, undefined, secure, secure?"None":"Lax");
