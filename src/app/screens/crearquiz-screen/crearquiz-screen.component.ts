@@ -52,4 +52,51 @@ export class CrearquizScreenComponent implements OnInit {
       }
     });
   }
+
+public async Ejemplo1(){
+  const url = 'https://magicloops.dev/api/loop/4362fea7-5ad5-44ce-9788-cb7a1b8f132d/run';
+  const body = { tema: "Economia" };
+
+  try {
+    const response = await this.http.post(url, body).toPromise();
+    const jsonString = encodeURIComponent(JSON.stringify(response));
+
+    this.router.navigate(["contestar-quiz"], { queryParams: { datos: jsonString } });
+    
+  } catch (error) {
+    console.error('Error al llamar a la API:', error);
+    alert('Ocurrió un error al generar el quiz.');
+  }
+}
+public async Ejemplo2(){
+  const url = 'https://magicloops.dev/api/loop/4362fea7-5ad5-44ce-9788-cb7a1b8f132d/run';
+  const body = { tema: "Programacion" };
+
+  try {
+    const response = await this.http.post(url, body).toPromise();
+    const jsonString = encodeURIComponent(JSON.stringify(response));
+
+    this.router.navigate(["contestar-quiz"], { queryParams: { datos: jsonString } });
+    
+  } catch (error) {
+    console.error('Error al llamar a la API:', error);
+    alert('Ocurrió un error al generar el quiz.');
+  }
+}
+public async Ejemplo3(){
+  const url = 'https://magicloops.dev/api/loop/4362fea7-5ad5-44ce-9788-cb7a1b8f132d/run';
+  const body = { tema: "Contaduria" };
+
+  try {
+    const response = await this.http.post(url, body).toPromise();
+    const jsonString = encodeURIComponent(JSON.stringify(response));
+
+    this.router.navigate(["contestar-quiz"], { queryParams: { datos: jsonString } });
+    
+  } catch (error) {
+    console.error('Error al llamar a la API:', error);
+    alert('Ocurrió un error al generar el quiz.');
+  }
+}
+
 }

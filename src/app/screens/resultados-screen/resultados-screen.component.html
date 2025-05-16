@@ -1,16 +1,26 @@
-<section class="home">
-    <div class="wrapper">
-      <!-- Esta etiqueta se usa para indicar todo el html que debe cubrir el menú -->
-      <mat-drawer-container>
-        <mat-drawer #drawer mode='over' position="end">
-          <app-right-sidebar (cerrar)="drawer.toggle()"></app-right-sidebar>
-        </mat-drawer>
-        <!-- Se coloca el header de las vistas -->
-        <app-navbar (drawer)="drawer.toggle()"></app-navbar>
-        <!-- Colocamos la sección del body de toda la vista -->
-        <div class="home-body">
-            <!-- body de los resultados -->
+<section class="resultados">
+  <div class="wrapper">
+    <!-- Esta etiqueta se usa para indicar todo el html que debe cubrir el menú -->
+    <mat-drawer-container>
+      <mat-drawer #drawer mode='over' position="end">
+        <app-right-sidebar (cerrar)="drawer.toggle()"></app-right-sidebar>
+      </mat-drawer>
+      <!-- Se coloca el header de las vistas -->
+      <app-navbar (drawer)="drawer.toggle()"></app-navbar>
+      <!-- Colocamos la sección del body de toda la vista -->
+      <div class="home-body">
+        <!-- body de los resultados -->
+        <div class="image-container">
+          <img src="/assets/image/nota.png" class="base-image">
+          <ng-container>
+            <img *ngIf="datosRecibidos >= 9" src="/assets/image/excelente.png" class="overlay-image">
+            <img *ngIf="datosRecibidos >= 6 && datosRecibidos < 9" src="/assets/image/imagenC.png" class="overlay-image">
+            <img *ngIf=" datosRecibidos < 6" src="/assets/image/imagenF.png" class="overlay-image">
+          </ng-container>
+          <div class="overlay-text">{{ datosRecibidos }} / 10</div>
+          <button class="finish-button" (click)="regresarHome()">Terminar</button>
         </div>
-      </mat-drawer-container>
-    </div>
-  </section>
+      </div>
+    </mat-drawer-container>
+  </div>
+</section>

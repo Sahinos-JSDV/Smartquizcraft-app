@@ -11,9 +11,9 @@
         <div class="home-body">
             <h2>Usuario, esto es lo mas reciente de ti</h2>
             <mat-list class="lista-contenido-Quizz">
-                <mat-list-item>Quizz 1</mat-list-item>
-                <mat-list-item>Quizz 2</mat-list-item>
-                <mat-list-item>Quizz 3</mat-list-item>
+                <mat-list-item (click)="Ejemplo1()" >Economia</mat-list-item>
+                <mat-list-item (click)="Ejemplo2()">Programacion</mat-list-item>
+                <mat-list-item (click)="Ejemplo3()">Contaduria</mat-list-item>
             </mat-list>
             <button class="btn btn-primary mt-5" type="submit" (click)="crear()">Crear Quiz</button>
         </div>

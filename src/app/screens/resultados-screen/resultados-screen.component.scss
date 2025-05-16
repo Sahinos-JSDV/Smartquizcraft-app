@@ -13,7 +13,62 @@
   .home-body {
     padding: 16px;
     box-sizing: border-box;
+    
+    background-image: url('/assets/image/quizbg.jpeg'); 
     background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 100vh;
+  }
+  .image-container {
+    position: relative; /* Establece un contexto de posicionamiento para las imágenes */
+    display: flex; /* Habilita flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho necesario */
+    height: 100%; 
+  }
+  
+  .base-image {
+    display: block; /* Asegura que la imagen base se muestre correctamente */
+    
+    width: 1500px;
+  }
+  
+  .overlay-image {
+    position: absolute; /* Posiciona esta imagen relativa al contenedor */
+    top: 50%; /* Posición vertical al 50% del contenedor */
+    left: 50%; /* Posición horizontal al 50% del contenedor */
+    transform: translate(-110%, -110%); /* Ajusta el centro de la imagen */
+    width: 120px;  /* Ajusta el tamaño de la imagen superpuesta si es necesario */
+  }
+
+  .overlay-text {
+    position: absolute; /* Posiciona el texto relativo al contenedor */
+    top: 50%; /* Alinea verticalmente con el centro del overlay */
+    left: calc(50% + 70px); /* Coloca el texto a la derecha del overlay */
+    transform: translateY(-400%); /* Ajusta el texto para que esté centrado verticalmente */
+    font-size: 30px; /* Tamaño del texto */
+    color: #000; /* Color del texto */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  }
+
+  .finish-button {
+    position: absolute; /* Posiciona el botón relativo al contenedor */
+    bottom: 20px; /* Coloca el botón cerca de la parte inferior del contenedor */
+    left: 50%; /* Centra horizontalmente el botón */
+    transform: translateX(-50%); /* Ajusta el botón para que esté perfectamente centrado */
+    transform: translateY(-600%);
+    background-color: #28a745; /* Color verde */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle un efecto elevado */
+    transition: background-color 0.3s ease; /* Animación suave al pasar el mouse */
+  }
+  
+  .finish-button:hover {
+    background-color: #218838; /* Color verde más oscuro al pasar el mouse */
   }

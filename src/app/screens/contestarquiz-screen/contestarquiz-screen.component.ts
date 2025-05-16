@@ -38,7 +38,7 @@ export class ContestarquizScreenComponent implements OnInit {
       }
     });
 
-    alert(`Has acertado ${correctas} de ${this.datosRecibidos.length} preguntas.`);
+    this.router.navigate(["resultados-quiz"], { queryParams: { datos: correctas } });
   }
 
 }
